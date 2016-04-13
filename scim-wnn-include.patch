@@ -1,0 +1,10 @@
+--- scim-wnn-1.0.0/src/wnnconversion.cpp.orig	2006-03-28 04:34:46.000000000 +0200
++++ scim-wnn-1.0.0/src/wnnconversion.cpp	2016-04-12 20:21:28.946671790 +0200
+@@ -19,6 +19,7 @@
+  ***************************************************************************/
+ #include "wnnconversion.h"
+ #include <scim_wnn_def.h>
++#include <string.h>
+ 
+ #ifdef HAVE_CONFIG_H
+   #include <config.h>

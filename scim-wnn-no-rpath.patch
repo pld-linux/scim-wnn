@@ -1,0 +1,29 @@
+--- scim-wnn-1.0.0/src/Makefile.am.orig	2006-02-04 04:40:33.000000000 +0100
++++ scim-wnn-1.0.0/src/Makefile.am	2016-04-12 20:22:23.730002824 +0200
+@@ -37,7 +37,7 @@
+ wnn_la_CFLAGS		= @SCIM_CFLAGS@ @SCIM_DEBUG_FLAGS@
+ wnn_la_CXXFLAGS		= @SCIM_CFLAGS@ @SCIM_DEBUG_FLAGS@
+ 
+-wnn_la_LDFLAGS = -avoid-version -module -rpath $(moduledir) \
++wnn_la_LDFLAGS = -avoid-version -module \
+ 	@LIBTOOL_EXPORT_OPTIONS@ @INTLLIBS@ @SCIM_LIBS@
+ 
+ if SCIM_BUILD_SETUP
+@@ -54,7 +54,6 @@
+ wnn_imengine_setup_la_CXXFLAGS= @SCIM_GTKUTILS_CFLAGS@ @SCIM_CFLAGS@ @SCIM_DEBUG_FLAGS@
+ 
+ wnn_imengine_setup_la_LDFLAGS = -avoid-version \
+-				   -rpath $(setupmoduledir) \
+ 				   -module \
+ 				   @LIBTOOL_EXPORT_OPTIONS@ \
+ 				   @SCIM_GTKUTILS_LIBS@ \
+--- scim-wnn-1.0.0/configure.ac.orig	2006-03-29 02:50:45.000000000 +0200
++++ scim-wnn-1.0.0/configure.ac	2016-04-12 20:23:10.473334196 +0200
+@@ -98,6 +98,7 @@
+ # libtool option to control which symbols are exported
+ # right now, symbols starting with _ are not exported
+ LIBTOOL_EXPORT_OPTIONS='-export-symbols-regex "^[[^_]].*"'
++AC_SUBST([LIBTOOL_EXPORT_OPTIONS])
+ 
+ # Extra args.
+ AC_ARG_ENABLE(debug,
