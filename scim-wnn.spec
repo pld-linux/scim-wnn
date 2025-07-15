@@ -33,9 +33,9 @@ Silnik IM SCIM dla metody wprowadzania znaków japońskich Wnn.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 #patch1 -p1
-%patch2 -p1
+%patch -P2 -p1
 
 %build
 %{__gettextize}
